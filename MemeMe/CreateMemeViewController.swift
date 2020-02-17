@@ -235,7 +235,10 @@ class CreateMemeViewController: UIViewController, UINavigationControllerDelegate
     
     func save(_ memedImage: UIImage) {
         // Create the meme
-        let _ = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: Image(withImage: imageView.image!), memedImage: Image(withImage: memedImage))
+        
+        let memeVM = MemesViewModel()
+        memeVM.appendMemes(meme: meme)
     }
     
     @objc func shareMemedImage() {

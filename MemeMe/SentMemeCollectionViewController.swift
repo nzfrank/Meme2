@@ -9,6 +9,6 @@
 import Foundation
 import UIKit
 
-class SentMemeCollectionViewController: UIViewController {
+class SentMemeCollectionViewController: UICollectionViewController {
     
 }

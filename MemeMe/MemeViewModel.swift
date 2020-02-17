@@ -22,14 +22,10 @@ struct Meme: Codable {
 
 class MemesViewModel {
     
-    var filename: String
-    
-    init(name:String) {
-        self.filename = name
-    }
+    let filename = "Memes"
     
     func getMemes() -> Memes? {
-        if let path = Bundle.main.path(forResource: self.filename, ofType: "plist"),
+        if let path = Bundle.main.path(forResource: filename, ofType: "plist"),
             let xml = FileManager.default.contents(atPath: path),
             let memes = try? PropertyListDecoder().decode(Memes.self, from: xml) {
             return memes
@@ -42,7 +38,7 @@ class MemesViewModel {
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
         
-        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(self.filename + ".plist")
+        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(filename + ".plist")
         
         var memes:Memes!
         if let m = getMemes() {
@@ -54,7 +50,9 @@ class MemesViewModel {
             let data = try encoder.encode(memes)
             try data.write(to: path)
         } catch {
+            print("🥵🥵🥵🥵🥵🥵🥵")
             print(error)
+            print("🥵🥵🥵🥵🥵🥵🥵")
         }
     }
     
