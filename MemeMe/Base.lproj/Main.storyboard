@@ -79,7 +79,11 @@
             <objects>
                 <tabBarController id="YFZ-Uy-667" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="neK-A5-rHe">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vkh-Hg-Hbr"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vkh-Hg-Hbr">
+                            <connections>
+                                <segue destination="fHo-Vi-Sld" kind="presentation" id="bLz-he-vmM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9NO-6N-9WJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>

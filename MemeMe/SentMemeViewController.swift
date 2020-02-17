@@ -10,21 +10,11 @@ import Foundation
 import UIKit
 
 class SentMemeViewController: UINavigationController {
-    
-    public var sentMemes: [Meme]?
-    private var createMemeButton: UIBarButtonItem = {
-        let b = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createMeme))
-        return b
-    }()
-    
+ 
     override func viewDidLoad() {
-        self.navigationItem.rightBarButtonItem = createMemeButton
         super.viewDidLoad()
     }
     
-    @objc func createMeme() {
-        
-    }
 }
 
 

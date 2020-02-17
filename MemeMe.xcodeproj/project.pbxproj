@@ -19,6 +19,7 @@
 		9E7B194923F921D000DD936F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 9E7B194823F921D000DD936F /* Podfile */; };
 		9E7B194B23F925EC00DD936F /* SentMemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7B194A23F925EC00DD936F /* SentMemeTableViewController.swift */; };
 		9E7B194D23F9260E00DD936F /* SentMemeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7B194C23F9260E00DD936F /* SentMemeCollectionViewController.swift */; };
+		9E7B194F23FA7E1500DD936F /* Memes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E7B194E23FA7E1500DD936F /* Memes.plist */; };
 		AE4439050C6B9645DF13F3AB /* Pods_MemeMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00EFAEF56F34C2920A06E142 /* Pods_MemeMe.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		9E7B194823F921D000DD936F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		9E7B194A23F925EC00DD936F /* SentMemeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemeTableViewController.swift; sourceTree = "<group>"; };
 		9E7B194C23F9260E00DD936F /* SentMemeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemeCollectionViewController.swift; sourceTree = "<group>"; };
+		9E7B194E23FA7E1500DD936F /* Memes.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Memes.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				9E7B193C23F91A6E00DD936F /* Info.plist */,
 				9E7B194A23F925EC00DD936F /* SentMemeTableViewController.swift */,
 				9E7B194C23F9260E00DD936F /* SentMemeCollectionViewController.swift */,
+				9E7B194E23FA7E1500DD936F /* Memes.plist */,
 			);
 			path = MemeMe;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			files = (
 				9E7B193B23F91A6E00DD936F /* LaunchScreen.storyboard in Resources */,
 				9E7B193823F91A6E00DD936F /* Assets.xcassets in Resources */,
+				9E7B194F23FA7E1500DD936F /* Memes.plist in Resources */,
 				9E7B194923F921D000DD936F /* Podfile in Resources */,
 				9E7B193623F91A6900DD936F /* Main.storyboard in Resources */,
 			);
