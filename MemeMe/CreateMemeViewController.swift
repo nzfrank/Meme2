@@ -239,6 +239,7 @@ class CreateMemeViewController: UIViewController, UINavigationControllerDelegate
         
         let memeVM = MemesViewModel()
         memeVM.appendMemes(meme: meme)
+        print("😬😬😬😬😬😬😬")
     }
     
     @objc func shareMemedImage() {
@@ -247,8 +248,8 @@ class CreateMemeViewController: UIViewController, UINavigationControllerDelegate
         v.completionWithItemsHandler = { [weak self]
             (activity, success, items, error) in
             guard let this = self else { return }
-            if success == true, let image = items?[0] as? UIImage{
-                this.save(image)
+            if success == true {
+                this.save(memedImage)
                 this.dismiss(animated: true)
             }
         }

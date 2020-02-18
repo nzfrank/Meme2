@@ -11,6 +11,10 @@ import UIKit
 
 struct Memes: Codable {
     var memes: [Meme]
+    
+    init(memes: [Meme]) {
+        self.memes = memes
+    }
 }
 
 struct Meme: Codable {
@@ -22,11 +26,10 @@ struct Meme: Codable {
 
 class MemesViewModel {
     
-    let filename = "Memes"
+    let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("Memes.plist")
     
     func getMemes() -> Memes? {
-        if let path = Bundle.main.path(forResource: filename, ofType: "plist"),
-            let xml = FileManager.default.contents(atPath: path),
+        if let xml = FileManager.default.contents(atPath: path.absoluteString),
             let memes = try? PropertyListDecoder().decode(Memes.self, from: xml) {
             return memes
         } else {
@@ -37,10 +40,8 @@ class MemesViewModel {
     func appendMemes(meme: Meme) {
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
-        
-        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(filename + ".plist")
-        
-        var memes:Memes!
+                
+        var memes = Memes(memes: [])
         if let m = getMemes() {
             memes.memes = m.memes
         }

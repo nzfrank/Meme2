@@ -19,13 +19,12 @@ class SentMemeTableViewController: UITableViewController {
     // MARK: Life cycle
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        memes = memeVM.getMemes()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        memes = memeVM.getMemes()
         self.tableView.reloadData()
     }
     
@@ -56,17 +55,6 @@ class SentMemeTableViewController: UITableViewController {
         let vc = UIViewController()
         let imageView = UIImageView(image: meme.memedImage.getImage())
         vc.view.addSubview(imageView)
-
-//        // Get the first node
-//        let firstNodeInTheAdventure = selectedAdventure.startNode
-//
-//        // Get a StoryNodeController from the Storyboard
-//        let storyNodeController = self.storyboard!.instantiateViewController(withIdentifier: "StoryNodeViewController") as! StoryNodeViewController
-//
-//        // Set the story node so that we will see the start of the story
-//        storyNodeController.storyNode = firstNodeInTheAdventure
-        
-        // Push the new controller onto the stack
         self.navigationController!.pushViewController(vc, animated: true)
     }
 }
