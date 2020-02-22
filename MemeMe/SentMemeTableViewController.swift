@@ -11,49 +11,40 @@ import UIKit
 
 class SentMemeTableViewController: UITableViewController {
     
-    // MARK: Properties
-    
-    let memeVM = MemesViewModel()
-    var memes: Memes?
-    
     // MARK: Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.separatorStyle = .none
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        memes = memeVM.getMemes()
         self.tableView.reloadData()
     }
     
     // MARK: UITableViewController delegate funcs
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let m = memes{
-            return m.memes.count
-        } else {
-            return 0
-        }
+        return Memes.memes.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let memes = memes?.memes else { return UITableViewCell() }
-        
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "MemeCell")!
-        let meme = memes[(indexPath as NSIndexPath).row]
-        cell.imageView!.image = meme.memedImage.getImage()
+        let meme = Memes.memes[(indexPath as NSIndexPath).row]
+        let title = meme.topText + " " + meme.bottomText
+        cell.textLabel?.text = title
+        cell.imageView!.image = meme.memedImage
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let memes = memes?.memes else { return }
-
-        let meme = memes[(indexPath as NSIndexPath).row]
+        let meme = Memes.memes[(indexPath as NSIndexPath).row]
         
         let vc = UIViewController()
-        let imageView = UIImageView(image: meme.memedImage.getImage())
+        let imageView = UIImageView(image: meme.memedImage)
         vc.view.addSubview(imageView)
         self.navigationController!.pushViewController(vc, animated: true)
     }
