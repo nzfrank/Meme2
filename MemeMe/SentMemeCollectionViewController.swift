@@ -14,6 +14,7 @@ class SentMemeCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
+        collectionViewLayout.collectionView?.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
