@@ -99,13 +99,15 @@ class CreateMemeViewController: UIViewController, UINavigationControllerDelegate
         textStackView.addArrangedSubview(bottomTextField)
         
         topToolBar.snp.makeConstraints { (make) in
-            make.top.left.right.equalTo(view.safeAreaLayoutGuide)
-            topToolBarHeightConstraint = make.height.equalTo(0).constraint
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.left.right.equalToSuperview()
+            topToolBarHeightConstraint = make.bottom.equalTo(topToolBar.snp.top).constraint
         }
         
         bottomToolBar.snp.makeConstraints { (make) in
-            make.bottom.left.right.equalToSuperview()
-            bottomToolBarHeightConstraint = make.height.equalTo(0).constraint
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.left.right.equalToSuperview()
+            bottomToolBarHeightConstraint = make.bottom.equalTo(bottomToolBar.snp.top).constraint
         }
         
         imageView.snp.makeConstraints { (make) in
@@ -147,6 +149,8 @@ class CreateMemeViewController: UIViewController, UINavigationControllerDelegate
         textField.delegate = self
         textField.autocapitalizationType = .allCharacters
         textField.borderStyle = .none
+        textField.adjustsFontSizeToFitWidth = true
+        textField.minimumFontSize = 10.0
     }
     
     func showToolbars(shouldShow: Bool) {

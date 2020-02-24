@@ -11,6 +11,10 @@ import UIKit
 
 class SentMemeCollectionViewController: UICollectionViewController {
     
+    // MARK: Properties
+    private let reusableCellID = "CollectionViewCellID"
+    
+    // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
@@ -27,7 +31,7 @@ class SentMemeCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCellCol", for: indexPath) as! MemeCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusableCellID, for: indexPath) as! MemeCollectionViewCell
         let meme = Memes.memes[(indexPath as NSIndexPath).row]
         cell.memeImageView.image = meme.memedImage
         

@@ -11,6 +11,9 @@ import UIKit
 
 class SentMemeTableViewController: UITableViewController {
     
+    // MARK: Properties
+    private let reusableCellID = "TableViewCellID"
+    
     // MARK: Life cycle
     
     override func viewDidLoad() {
@@ -31,7 +34,7 @@ class SentMemeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "MemeCell")!
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: reusableCellID)!
         let meme = Memes.memes[(indexPath as NSIndexPath).row]
         let title = meme.topText + " " + meme.bottomText
         cell.textLabel?.text = title
@@ -43,9 +46,7 @@ class SentMemeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let meme = Memes.memes[(indexPath as NSIndexPath).row]
         
-        let vc = UIViewController()
-        let imageView = UIImageView(image: meme.memedImage)
-        vc.view.addSubview(imageView)
+        let vc = MemeDetailViewController(meme.memedImage)
         self.navigationController!.pushViewController(vc, animated: true)
     }
 }

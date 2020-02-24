@@ -24,6 +24,35 @@
             </objects>
             <point key="canvasLocation" x="577" y="441"/>
         </scene>
+        <!--Meme Detail View Controller-->
+        <scene sceneID="GIO-4N-bfa">
+            <objects>
+                <viewController id="lDk-JX-0Gk" customClass="MemeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nfQ-Vt-ngV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QyY-KT-age">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QyY-KT-age" firstAttribute="trailing" secondItem="ZoH-Vd-JWl" secondAttribute="trailing" id="Bup-V1-zY8"/>
+                            <constraint firstItem="QyY-KT-age" firstAttribute="top" secondItem="ZoH-Vd-JWl" secondAttribute="top" id="FqB-PO-3xd"/>
+                            <constraint firstItem="QyY-KT-age" firstAttribute="bottom" secondItem="ZoH-Vd-JWl" secondAttribute="bottom" id="GPV-lv-lU3"/>
+                            <constraint firstItem="QyY-KT-age" firstAttribute="leading" secondItem="ZoH-Vd-JWl" secondAttribute="leading" id="HJb-Sk-8RE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZoH-Vd-JWl"/>
+                    </view>
+                    <connections>
+                        <outlet property="memeImageView" destination="QyY-KT-age" id="irP-XN-l9G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d5K-gW-QdU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1449" y="444"/>
+        </scene>
         <!--Sent Meme Table View Controller-->
         <scene sceneID="iXS-kA-DEq">
             <objects>
@@ -33,7 +62,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MemeCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeCell" rowHeight="43.5" id="I5Q-Zl-sSE">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MemeCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCellID" rowHeight="43.5" id="I5Q-Zl-sSE">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I5Q-Zl-sSE" id="vAo-HB-vs8">
@@ -69,7 +98,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemeCellCol" id="bEO-0P-lTB" customClass="MemeCollectionViewCell" customModule="MemeMe" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCellID" id="bEO-0P-lTB" customClass="MemeCollectionViewCell" customModule="MemeMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TDZ-wS-cFK">
@@ -125,7 +154,7 @@
                     <navigationItem key="navigationItem" id="neK-A5-rHe">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vkh-Hg-Hbr">
                             <connections>
-                                <segue destination="fHo-Vi-Sld" kind="presentation" id="bLz-he-vmM"/>
+                                <segue destination="fHo-Vi-Sld" kind="presentation" modalPresentationStyle="automatic" id="PAD-QJ-ZeU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
