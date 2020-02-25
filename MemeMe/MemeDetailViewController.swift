@@ -12,19 +12,11 @@ import UIKit
 class MemeDetailViewController: UIViewController {
     
     @IBOutlet var memeImageView: UIImageView!
-    
-    init(_ image: UIImage) {
-        super.init(nibName: nil, bundle: nil)
-        memeImageView = UIImageView(image: image)
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        fatalError("init(coder:) has not been implemented")
-    }
+    var image:UIImage? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.memeImageView.image = self.image
         view.addSubview(memeImageView)
     }
 }

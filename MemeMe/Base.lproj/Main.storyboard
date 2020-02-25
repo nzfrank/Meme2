@@ -27,7 +27,7 @@
         <!--Meme Detail View Controller-->
         <scene sceneID="GIO-4N-bfa">
             <objects>
-                <viewController id="lDk-JX-0Gk" customClass="MemeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="details_vc" id="lDk-JX-0Gk" customClass="MemeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nfQ-Vt-ngV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
